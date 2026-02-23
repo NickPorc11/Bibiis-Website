@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Bibiis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #000000;
+            --bg-elevated: #111111;
+            --bg-card: #0A0A0A;
+            --border: #1A1A1A;
+            --border-light: #222222;
+            --text: #FFFFFF;
+            --text-secondary: #999999;
+            --text-muted: #666666;
+            --accent: #6C63FF;
+            --accent-soft: rgba(108, 99, 255, 0.1);
+            --accent-border: rgba(108, 99, 255, 0.25);
+            --max-width: 740px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── Navigation ── */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+        }
+
+        .nav-logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 80px 24px 48px;
+            text-align: center;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            background: var(--accent-soft);
+            border: 1px solid var(--accent-border);
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 52px);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero-meta {
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        /* ── Table of Contents ── */
+        .toc {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 56px;
+        }
+
+        .toc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .toc-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 40px;
+        }
+
+        @media (max-width: 560px) {
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+
+        .toc-link {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 10px 12px;
+            border-radius: 8px;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            transition: all 0.2s;
+        }
+
+        .toc-link:hover {
+            color: var(--text);
+            background: var(--accent-soft);
+        }
+
+        .toc-num {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+            min-width: 18px;
+        }
+
+        /* ── Content ── */
+        .content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 100px;
+        }
+
+        .section {
+            padding: 48px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section:first-child {
+            border-top: none;
+        }
+
+        .section-number {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+        }
+
+        .section h2 {
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 36px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            list-style: none;
+            margin-bottom: 16px;
+            padding-left: 0;
+        }
+
+        .section ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        .section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.6;
+        }
+
+        .section ul li strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .section a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .section a:hover {
+            opacity: 0.8;
+        }
+
+        .highlight-box {
+            background: var(--accent-soft);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            color: var(--text);
+            margin-bottom: 0;
+        }
+
+        .highlight-box a {
+            color: var(--accent);
+        }
+
+        /* ── Footer ── */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: var(--accent);
+        }
+
+        /* ── Animations ── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .fade-up-delay {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.7s ease 0.15s forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── Scrollbar ── */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-light);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="https://www.bibiis.ch" class="nav-logo">Bib<span>ii</span>s</a>
+            <div class="nav-links">
+                <a href="https://www.bibiis.ch/#about" class="nav-link">About</a>
+                <a href="https://www.bibiis.ch/#waitlist" class="nav-link">Join the waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero fade-up">
+        <div class="hero-label">Legal</div>
+        <h1>Privacy Policy</h1>
+        <p class="hero-meta">Last updated: February 2026</p>
+    </header>
+
+    <!-- Table of Contents -->
+    <div class="toc fade-up-delay">
+        <div class="toc-card">
+            <div class="toc-title">Contents</div>
+            <div class="toc-grid">
+                <a href="#introduction" class="toc-link"><span class="toc-num">01</span> Introduction</a>
+                <a href="#data-controller" class="toc-link"><span class="toc-num">02</span> Data Controller</a>
+                <a href="#data-we-collect" class="toc-link"><span class="toc-num">03</span> Data We Collect</a>
+                <a href="#how-we-use" class="toc-link"><span class="toc-num">04</span> How We Use Your Data</a>
+                <a href="#legal-basis" class="toc-link"><span class="toc-num">05</span> Legal Basis for Processing</a>
+                <a href="#third-party" class="toc-link"><span class="toc-num">06</span> Third-Party Providers</a>
+                <a href="#data-sharing" class="toc-link"><span class="toc-num">07</span> Data Sharing & Transfers</a>
+                <a href="#data-retention" class="toc-link"><span class="toc-num">08</span> Data Retention</a>
+                <a href="#data-security" class="toc-link"><span class="toc-num">09</span> Data Security</a>
+                <a href="#your-rights" class="toc-link"><span class="toc-num">10</span> Your Rights Under GDPR</a>
+                <a href="#open-banking" class="toc-link"><span class="toc-num">11</span> Open Banking & PSD2</a>
+                <a href="#cookies" class="toc-link"><span class="toc-num">12</span> Cookies & Tracking</a>
+                <a href="#children" class="toc-link"><span class="toc-num">13</span> Children's Privacy</a>
+                <a href="#changes" class="toc-link"><span class="toc-num">14</span> Changes to This Policy</a>
+                <a href="#contact" class="toc-link"><span class="toc-num">15</span> Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <main class="content">
+
+        <!-- 1. Introduction -->
+        <section class="section" id="introduction">
+            <div class="section-number">Section 01</div>
+            <h2>Introduction</h2>
+            <p>Bibiis ("we", "us", or "our") is a personal finance management platform operated by NVP Tech Srls, a company registered in Italy. Bibiis provides account aggregation, budgeting, financial analytics, and AI-powered financial coaching services through our mobile application and web platform at bibiis.ch.</p>
+            <p>This Privacy Policy explains how we collect, use, store, share, and protect your personal data when you use our services. We are committed to protecting your privacy and complying with the EU General Data Protection Regulation (GDPR), the revised Payment Services Directive (PSD2), and all applicable data protection laws.</p>
+            <p>By using Bibiis, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with our practices, please do not use our services.</p>
+        </section>
+
+        <!-- 2. Data Controller -->
+        <section class="section" id="data-controller">
+            <div class="section-number">Section 02</div>
+            <h2>Data Controller</h2>
+            <p>The data controller responsible for your personal data is:</p>
+            <div class="highlight-box">
+                <p><strong>NVP Tech Srls</strong><br>
+                Email: <a href="mailto:privacy@bibiis.ch">privacy@bibiis.ch</a><br>
+                Website: <a href="https://www.bibiis.ch">bibiis.ch</a></p>
+            </div>
+            <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at the email address above.</p>
+        </section>
+
+        <!-- 3. Data We Collect -->
+        <section class="section" id="data-we-collect">
+            <div class="section-number">Section 03</div>
+            <h2>Data We Collect</h2>
+            <p>We collect and process the following categories of personal data:</p>
+
+            <h3>3.1 Account Information</h3>
+            <p>When you register for Bibiis, we collect:</p>
+            <ul>
+                <li><strong>Name:</strong> your full name as provided during registration</li>
+                <li><strong>Email address:</strong> used for account authentication and communications</li>
+                <li><strong>Password:</strong> stored in hashed form; we never store plain-text passwords</li>
+                <li><strong>Preferred currency and language:</strong> to personalize your experience</li>
+            </ul>
+
+            <h3>3.2 Financial Data</h3>
+            <p>When you connect your bank accounts through our open banking integration, we access:</p>
+            <ul>
+                <li><strong>Account details:</strong> account names, types, balances, and IBAN/identifiers</li>
+                <li><strong>Transaction history:</strong> transaction amounts, dates, descriptions, merchant information, and categories</li>
+                <li><strong>Account holder information:</strong> as provided by your bank through the open banking API</li>
+            </ul>
+            <div class="highlight-box">
+                <p>Financial data is accessed through licensed Account Information Service Providers (AISPs) in compliance with PSD2 regulations. We only access your data with your explicit consent, and you can revoke access at any time.</p>
+            </div>
+
+            <h3>3.3 Usage Data</h3>
+            <p>We automatically collect certain technical and usage information:</p>
+            <ul>
+                <li><strong>Device information:</strong> device type, operating system, and app version</li>
+                <li><strong>Log data:</strong> access times, features used, and interaction patterns</li>
+                <li><strong>Analytics data:</strong> aggregated usage statistics to improve our services</li>
+            </ul>
+
+            <h3>3.4 AI Interaction Data</h3>
+            <p>When you use our AI-powered financial coaching features, we process:</p>
+            <ul>
+                <li><strong>Chat messages:</strong> your questions and conversations with our AI assistant</li>
+                <li><strong>Financial context:</strong> relevant financial data used to generate personalized insights</li>
+            </ul>
+        </section>
+
+        <!-- 4. How We Use Your Data -->
+        <section class="section" id="how-we-use">
+            <div class="section-number">Section 04</div>
+            <h2>How We Use Your Data</h2>
+            <p>We process your personal data for the following purposes:</p>
+            <ul>
+                <li><strong>Service delivery:</strong> to provide account aggregation, budgeting, net worth tracking, and financial analytics</li>
+                <li><strong>AI-powered insights:</strong> to generate personalized financial coaching, spending predictions, and recommendations</li>
+                <li><strong>Transaction processing:</strong> to categorize, normalize, and analyze your transactions for budgeting and reporting</li>
+                <li><strong>Security:</strong> to detect fraud, prevent unauthorized access, and ensure the integrity of your account</li>
+                <li><strong>Communications:</strong> to send you service-related notifications, updates, and support responses</li>
+                <li><strong>Service improvement:</strong> to analyze usage patterns and improve our platform features and performance</li>
+                <li><strong>Legal compliance:</strong> to meet our regulatory obligations under GDPR, PSD2, and applicable financial regulations</li>
+            </ul>
+        </section>
+
+        <!-- 5. Legal Basis -->
+        <section class="section" id="legal-basis">
+            <div class="section-number">Section 05</div>
+            <h2>Legal Basis for Processing</h2>
+            <p>We process your personal data based on the following legal grounds under Article 6 of the GDPR:</p>
+            <ul>
+                <li><strong>Consent (Art. 6(1)(a)):</strong> for connecting bank accounts via open banking and for AI-powered financial coaching features. You may withdraw consent at any time</li>
+                <li><strong>Contract performance (Art. 6(1)(b)):</strong> to provide the services you have requested, including account management, budgeting, and financial analytics</li>
+                <li><strong>Legitimate interest (Art. 6(1)(f)):</strong> for service improvement, security measures, and fraud prevention, where our interests do not override your rights</li>
+                <li><strong>Legal obligation (Art. 6(1)(c)):</strong> to comply with applicable laws and regulations, including financial services regulations</li>
+            </ul>
+        </section>
+
+        <!-- 6. Third-Party Providers -->
+        <section class="section" id="third-party">
+            <div class="section-number">Section 06</div>
+            <h2>Third-Party Service Providers</h2>
+            <p>We work with carefully selected third-party providers to deliver our services. These providers process data on our behalf under strict contractual obligations:</p>
+
+            <h3>6.1 Open Banking Providers</h3>
+            <p>We use licensed Account Information Service Providers (AISPs) such as Tink and/or Salt Edge to securely connect to your bank accounts. These providers are regulated under PSD2 and access your financial data only with your explicit consent. They act as data processors and are contractually bound to process your data solely for the purpose of providing account information services to Bibiis.</p>
+
+            <h3>6.2 Cloud Infrastructure</h3>
+            <p>We use Supabase for our backend infrastructure, including database hosting and authentication services. Data is stored in secure, GDPR-compliant data centers within the European Economic Area (EEA).</p>
+
+            <h3>6.3 AI Services</h3>
+            <p>We use OpenAI to power our AI financial coaching features. When you interact with our AI assistant, relevant financial context may be sent to OpenAI's API to generate responses. We minimize the data shared and do not send full account credentials or sensitive authentication data. OpenAI processes this data as a data processor under our instructions and does not use it to train their models.</p>
+
+            <h3>6.4 Analytics</h3>
+            <p>We may use analytics services to understand how users interact with our platform. Any analytics data is aggregated and anonymized where possible.</p>
+        </section>
+
+        <!-- 7. Data Sharing -->
+        <section class="section" id="data-sharing">
+            <div class="section-number">Section 07</div>
+            <h2>Data Sharing and Transfers</h2>
+            <div class="highlight-box">
+                <p><strong>We do not sell, rent, or trade your personal data to third parties for marketing purposes.</strong></p>
+            </div>
+            <p>We may share your data in the following limited circumstances:</p>
+            <ul>
+                <li><strong>Service providers:</strong> with the third-party providers described in Section 6, acting as data processors under our instructions</li>
+                <li><strong>Legal requirements:</strong> when required by law, regulation, or valid legal process</li>
+                <li><strong>Safety and security:</strong> to protect the rights, safety, and property of Bibiis, our users, or the public</li>
+                <li><strong>Business transfers:</strong> in connection with a merger, acquisition, or sale of assets, with prior notice to affected users</li>
+            </ul>
+            <p>Where data is transferred outside the European Economic Area (EEA), we ensure appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) approved by the European Commission, or adequacy decisions.</p>
+        </section>
+
+        <!-- 8. Data Retention -->
+        <section class="section" id="data-retention">
+            <div class="section-number">Section 08</div>
+            <h2>Data Retention</h2>
+            <p>We retain your personal data only for as long as necessary to fulfill the purposes described in this policy:</p>
+            <ul>
+                <li><strong>Account data:</strong> retained for the duration of your account and deleted within 30 days of account closure</li>
+                <li><strong>Financial data:</strong> transaction data is retained while your account is active and for up to 12 months after disconnecting a bank account, unless longer retention is required by law</li>
+                <li><strong>AI interaction data:</strong> chat history is retained while your account is active and deleted upon account closure</li>
+                <li><strong>Usage and analytics data:</strong> retained in anonymized form for up to 24 months for service improvement purposes</li>
+            </ul>
+            <p>You may request earlier deletion of your data at any time by contacting us at <a href="mailto:privacy@bibiis.ch">privacy@bibiis.ch</a>.</p>
+        </section>
+
+        <!-- 9. Data Security -->
+        <section class="section" id="data-security">
+            <div class="section-number">Section 09</div>
+            <h2>Data Security</h2>
+            <p>We implement robust technical and organizational measures to protect your personal data, including encryption of data in transit (TLS/SSL) and at rest, secure authentication with hashed passwords and support for multi-factor authentication, regular security assessments and monitoring, access controls ensuring only authorized personnel can access personal data, and secure API communications with our banking and AI service providers.</p>
+            <p>While we take every reasonable precaution, no system is completely secure. We encourage you to use strong, unique passwords and to contact us immediately if you suspect unauthorized access to your account.</p>
+        </section>
+
+        <!-- 10. Your Rights -->
+        <section class="section" id="your-rights">
+            <div class="section-number">Section 10</div>
+            <h2>Your Rights Under GDPR</h2>
+            <p>As a data subject under the GDPR, you have the following rights:</p>
+            <ul>
+                <li><strong>Right of access (Art. 15):</strong> request a copy of the personal data we hold about you</li>
+                <li><strong>Right to rectification (Art. 16):</strong> request correction of inaccurate or incomplete data</li>
+                <li><strong>Right to erasure (Art. 17):</strong> request deletion of your personal data ("right to be forgotten")</li>
+                <li><strong>Right to restrict processing (Art. 18):</strong> request limitation of how we process your data</li>
+                <li><strong>Right to data portability (Art. 20):</strong> receive your data in a structured, machine-readable format</li>
+                <li><strong>Right to object (Art. 21):</strong> object to processing based on legitimate interests</li>
+                <li><strong>Right to withdraw consent:</strong> withdraw consent at any time for processing based on consent, without affecting the lawfulness of prior processing</li>
+            </ul>
+            <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@bibiis.ch">privacy@bibiis.ch</a>. We will respond to your request within 30 days.</p>
+            <p>You also have the right to lodge a complaint with your local data protection authority. In Italy, this is the <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
+        </section>
+
+        <!-- 11. Open Banking -->
+        <section class="section" id="open-banking">
+            <div class="section-number">Section 11</div>
+            <h2>Open Banking and PSD2 Compliance</h2>
+            <p>Bibiis accesses your bank account data through licensed AISPs regulated under the revised Payment Services Directive (PSD2). Key principles of our open banking practices:</p>
+            <ul>
+                <li><strong>Explicit consent:</strong> We only access your financial data after you provide explicit, informed consent through a secure authentication process with your bank</li>
+                <li><strong>Limited access:</strong> We access only account information (balances and transactions). We cannot initiate payments or modify your accounts</li>
+                <li><strong>Revocable access:</strong> You can disconnect any linked bank account at any time through the Bibiis app, immediately revoking our access to new data from that account</li>
+                <li><strong>Regulated providers:</strong> Our AISP partners are licensed and supervised by relevant financial authorities and comply with all PSD2 requirements, including strong customer authentication (SCA)</li>
+            </ul>
+        </section>
+
+        <!-- 12. Cookies -->
+        <section class="section" id="cookies">
+            <div class="section-number">Section 12</div>
+            <h2>Cookies and Tracking Technologies</h2>
+            <p>Our website (bibiis.ch) may use essential cookies to ensure proper functionality. We do not use advertising or tracking cookies. If we introduce non-essential cookies in the future, we will update this policy and obtain your consent before placing them.</p>
+        </section>
+
+        <!-- 13. Children -->
+        <section class="section" id="children">
+            <div class="section-number">Section 13</div>
+            <h2>Children's Privacy</h2>
+            <p>Bibiis is designed for users aged 18 and older. We do not knowingly collect personal data from children under 18. If we become aware that we have collected data from a minor, we will take steps to delete it promptly.</p>
+        </section>
+
+        <!-- 14. Changes -->
+        <section class="section" id="changes">
+            <div class="section-number">Section 14</div>
+            <h2>Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices, services, or applicable laws. We will notify you of material changes through the app or by email. The "Last updated" date at the top of this policy indicates when it was last revised.</p>
+            <p>We encourage you to review this Privacy Policy periodically.</p>
+        </section>
+
+        <!-- 15. Contact -->
+        <section class="section" id="contact">
+            <div class="section-number">Section 15</div>
+            <h2>Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:</p>
+            <div class="highlight-box">
+                <p><strong>NVP Tech Srls</strong><br>
+                Email: <a href="mailto:privacy@bibiis.ch">privacy@bibiis.ch</a><br>
+                Website: <a href="https://www.bibiis.ch">bibiis.ch</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 NVP Tech Srls. All rights reserved. &nbsp;&middot;&nbsp; <a href="https://www.bibiis.ch">bibiis.ch</a></p>
+    </footer>
+
+</body>
+</html>

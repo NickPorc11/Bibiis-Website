@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Bibiis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #000000; --bg-card: #0A0A0A; --border: #1A1A1A;
+            --text: #FFFFFF; --text-secondary: #999999; --text-muted: #666666;
+            --accent: #6C63FF; --accent-soft: rgba(108, 99, 255, 0.1);
+            --accent-border: rgba(108, 99, 255, 0.25); --max-width: 740px;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background-color: var(--bg); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); padding: 16px 24px; }
+        .nav-inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 20px; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: -0.03em; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-link { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-link:hover { color: var(--text); }
+        .hero { max-width: var(--max-width); margin: 0 auto; padding: 80px 24px 48px; text-align: center; }
+        .hero-label { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-border); padding: 6px 16px; border-radius: 100px; margin-bottom: 24px; }
+        .hero h1 { font-size: clamp(36px, 6vw, 52px); font-weight: 700; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 16px; }
+        .hero-meta { font-size: 15px; color: var(--text-muted); }
+        .toc { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 56px; }
+        .toc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+        .toc-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); margin-bottom: 24px; }
+        .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; }
+        @media (max-width: 560px) { .toc-grid { grid-template-columns: 1fr; } }
+        .toc-link { font-size: 14px; color: var(--text-secondary); text-decoration: none; padding: 10px 12px; border-radius: 8px; display: flex; align-items: baseline; gap: 12px; transition: all 0.2s; }
+        .toc-link:hover { color: var(--text); background: var(--accent-soft); }
+        .toc-num { font-size: 11px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; min-width: 18px; }
+        .content { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 100px; }
+        .section { padding: 48px 0; border-top: 1px solid var(--border); }
+        .section:first-child { border-top: none; }
+        .section-number { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; }
+        .section h2 { font-size: clamp(24px, 4vw, 32px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 20px; }
+        .section h3 { font-size: 17px; font-weight: 600; margin-top: 36px; margin-bottom: 12px; color: var(--text); }
+        .section p { color: var(--text-secondary); margin-bottom: 16px; font-size: 15px; line-height: 1.8; }
+        .section ul { list-style: none; margin-bottom: 16px; }
+        .section ul li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: var(--text-secondary); line-height: 1.75; }
+        .section ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.6; }
+        .section ul li strong { color: var(--text); font-weight: 500; }
+        .section a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        .section a:hover { opacity: 0.8; }
+        .highlight-box { background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 24px 0; }
+        .highlight-box p { color: var(--text); margin-bottom: 0; }
+        .warning-box { background: rgba(255, 107, 53, 0.08); border-left: 3px solid #FF6B35; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 24px 0; }
+        .warning-box p { color: var(--text); margin-bottom: 0; font-size: 15px; line-height: 1.8; }
+        .footer { border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; }
+        .footer p { font-size: 13px; color: var(--text-muted); }
+        .footer a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer a:hover { color: var(--accent); }
+        .fade-up { opacity: 0; transform: translateY(20px); animation: fadeUp 0.7s ease forwards; }
+        .fade-up-delay { opacity: 0; transform: translateY(20px); animation: fadeUp 0.7s ease 0.15s forwards; }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="https://www.bibiis.ch" class="nav-logo">Bib<span>ii</span>s</a>
+            <div class="nav-links">
+                <a href="https://www.bibiis.ch/#about" class="nav-link">About</a>
+                <a href="https://www.bibiis.ch/#waitlist" class="nav-link">Join the waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero fade-up">
+        <div class="hero-label">Legal</div>
+        <h1>Terms of Service</h1>
+        <p class="hero-meta">Last updated: February 2026</p>
+    </header>
+
+    <div class="toc fade-up-delay">
+        <div class="toc-card">
+            <div class="toc-title">Contents</div>
+            <div class="toc-grid">
+                <a href="#s1" class="toc-link"><span class="toc-num">01</span> Introduction</a>
+                <a href="#s2" class="toc-link"><span class="toc-num">02</span> Description of Service</a>
+                <a href="#s3" class="toc-link"><span class="toc-num">03</span> No Financial Advice</a>
+                <a href="#s4" class="toc-link"><span class="toc-num">04</span> User Account</a>
+                <a href="#s5" class="toc-link"><span class="toc-num">05</span> Bank Connection</a>
+                <a href="#s6" class="toc-link"><span class="toc-num">06</span> Use of the Service</a>
+                <a href="#s7" class="toc-link"><span class="toc-num">07</span> Intellectual Property</a>
+                <a href="#s8" class="toc-link"><span class="toc-num">08</span> Data and Privacy</a>
+                <a href="#s9" class="toc-link"><span class="toc-num">09</span> Data Accuracy</a>
+                <a href="#s10" class="toc-link"><span class="toc-num">10</span> Limitation of Liability</a>
+                <a href="#s11" class="toc-link"><span class="toc-num">11</span> Termination</a>
+                <a href="#s12" class="toc-link"><span class="toc-num">12</span> Modifications</a>
+                <a href="#s13" class="toc-link"><span class="toc-num">13</span> Governing Law</a>
+                <a href="#s14" class="toc-link"><span class="toc-num">14</span> Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="content">
+
+        <section class="section" id="s1">
+            <div class="section-number">Section 01</div>
+            <h2>Introduction</h2>
+            <p>Welcome to Bibiis. These Terms of Service ("Terms") govern your use of the Bibiis platform, including the web application, mobile application, and all related services (collectively, the "Service"), operated by NVP Tech Srls, a company registered in Italy ("we", "us", "our", or "Bibiis").</p>
+            <p>By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, please do not use the Service.</p>
+        </section>
+
+        <section class="section" id="s2">
+            <div class="section-number">Section 02</div>
+            <h2>Description of the Service</h2>
+            <p>Bibiis is a personal finance management platform that provides:</p>
+            <ul>
+                <li><strong>Multi-bank account aggregation</strong> via open banking (PSD2)</li>
+                <li><strong>Automatic transaction categorization</strong> powered by artificial intelligence</li>
+                <li><strong>Financial dashboard</strong> with overview of income, expenses, and net worth</li>
+                <li><strong>Automatic detection</strong> of recurring payments and subscriptions</li>
+                <li><strong>AI-powered financial assistant</strong> for analysis and questions about your data</li>
+                <li><strong>Financial goal setting</strong> and tracking</li>
+            </ul>
+        </section>
+
+        <section class="section" id="s3">
+            <div class="section-number">Section 03</div>
+            <h2>No Financial Advice</h2>
+            <div class="warning-box">
+                <p><strong>IMPORTANT:</strong> Bibiis is NOT a financial advisor, asset manager, financial intermediary, or credit institution. Bibiis does not provide financial, tax, legal, or investment advice of any kind. We do not manage, invest, transfer, or hold money or assets on behalf of users.</p>
+            </div>
+            <ul>
+                <li><strong>No advisory services:</strong> All information, analyses, categorizations, and insights provided by Bibiis are for informational and personal organizational purposes only. They do not constitute and should not be interpreted as financial, investment, tax, or legal advice.</li>
+                <li><strong>No asset management:</strong> Bibiis does not manage, invest, transfer, custody, or hold money, securities, or any other financial assets on behalf of users. We do not have transactional access to your bank accounts: we access them exclusively in read-only mode to retrieve balances and transaction history.</li>
+                <li><strong>No decision-making responsibility:</strong> Any financial decision made by the user based on information displayed on Bibiis is the sole responsibility of the user. We recommend consulting a qualified professional before making important financial decisions.</li>
+                <li><strong>AI assistant:</strong> The AI financial assistant integrated into Bibiis provides analyses and responses based on your transaction data. Its responses are automatically generated and do not represent professional advice. The AI may make mistakes.</li>
+            </ul>
+        </section>
+
+        <section class="section" id="s4">
+            <div class="section-number">Section 04</div>
+            <h2>User Account</h2>
+            <h3>4.1 Registration</h3>
+            <p>To use the Service, you must create an account by providing accurate and complete information. You are responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account.</p>
+            <h3>4.2 Age Requirements</h3>
+            <p>You must be at least 18 years old to use Bibiis. By using the Service, you represent that you are at least 18 years of age.</p>
+            <h3>4.3 Account Security</h3>
+            <p>You agree to notify us immediately of any unauthorized use of your account or any other security breach. We will not be liable for any losses arising from the unauthorized use of your account.</p>
+        </section>
+
+        <section class="section" id="s5">
+            <div class="section-number">Section 05</div>
+            <h2>Bank Connection and Open Banking</h2>
+            <p>Bibiis uses authorized Account Information Service Providers (AISPs), such as Tink and/or Salt Edge, to connect to your bank accounts in compliance with the PSD2 Directive.</p>
+            <ul>
+                <li>Access to your banking data is exclusively in <strong>read-only mode</strong> (Account Information Services)</li>
+                <li>We <strong>cannot</strong> make payments, transfers, or any transactional operations on your accounts</li>
+                <li>The bank connection requires your <strong>explicit consent</strong> and can be revoked at any time</li>
+                <li>Your banking login credentials are <strong>never stored</strong> on our servers: authentication takes place directly through your banking institution</li>
+            </ul>
+        </section>
+
+        <section class="section" id="s6">
+            <div class="section-number">Section 06</div>
+            <h2>Use of the Service</h2>
+            <h3>6.1 Permitted Use</h3>
+            <p>You agree to use the Service exclusively for managing your personal finances and in compliance with applicable laws.</p>
+            <h3>6.2 Prohibited Use</h3>
+            <p>You may not:</p>
+            <ul>
+                <li>Use the Service for illegal, fraudulent, or unauthorized purposes</li>
+                <li>Attempt to access other users' data or our systems in an unauthorized manner</li>
+                <li>Reproduce, distribute, or create derivative works from the Service without written authorization</li>
+                <li>Use automated systems (bots, scrapers) to access the Service</li>
+                <li>Interfere with the operation of the Service or compromise its security</li>
+            </ul>
+        </section>
+
+        <section class="section" id="s7">
+            <div class="section-number">Section 07</div>
+            <h2>Intellectual Property</h2>
+            <p>The Service, including software, design, logos, text, and all content created by Bibiis, is the exclusive property of NVP Tech Srls and is protected by copyright and intellectual property laws. You do not acquire any ownership rights in the Service.</p>
+            <p>Your personal and financial data remains your exclusive property. We process it under a limited license solely for the purpose of providing the Service as described in these Terms and our Privacy Policy.</p>
+        </section>
+
+        <section class="section" id="s8">
+            <div class="section-number">Section 08</div>
+            <h2>Data and Privacy</h2>
+            <p>The collection and processing of your personal data is governed by our <a href="/privacy">Privacy Policy</a>. The Privacy Policy forms an integral part of these Terms.</p>
+            <div class="highlight-box">
+                <p>In summary: we collect only the data necessary to provide you with the Service, we process your financial data in compliance with GDPR and PSD2, and we do not sell or share your data with third parties for marketing purposes.</p>
+            </div>
+        </section>
+
+        <section class="section" id="s9">
+            <div class="section-number">Section 09</div>
+            <h2>Data Accuracy</h2>
+            <p>Bibiis strives to provide accurate information based on data received from your banking institutions. However:</p>
+            <ul>
+                <li>We do not guarantee the <strong>accuracy, completeness, or timeliness</strong> of the financial data displayed, as it depends on the availability and correctness of information provided by banks</li>
+                <li>Automatic transaction categorization via AI <strong>may contain errors</strong>. Users are encouraged to verify categorizations</li>
+                <li>Net worth and other aggregate calculations are <strong>estimates</strong> based on available data and may not reflect your complete financial situation</li>
+            </ul>
+        </section>
+
+        <section class="section" id="s10">
+            <div class="section-number">Section 10</div>
+            <h2>Limitation of Liability</h2>
+            <p>The Service is provided "as is" and "as available". To the maximum extent permitted by applicable law:</p>
+            <ul>
+                <li>Bibiis shall not be liable for any <strong>direct, indirect, incidental, special, or consequential damages</strong> arising from the use of or inability to use the Service</li>
+                <li>We shall not be liable for <strong>financial decisions</strong> made based on information provided by the Service</li>
+                <li>We shall not be liable for <strong>service interruptions</strong>, data loss, or errors in transaction categorization</li>
+                <li>Our total aggregate liability shall not exceed the amount you have paid for the Service in the <strong>12 months</strong> preceding the event giving rise to the claim</li>
+            </ul>
+        </section>
+
+        <section class="section" id="s11">
+            <div class="section-number">Section 11</div>
+            <h2>Termination</h2>
+            <p>You may stop using the Service and delete your account at any time from your profile settings or by contacting us at <a href="mailto:support@bibiis.ch">support@bibiis.ch</a>.</p>
+            <p>We reserve the right to suspend or terminate your account in the event of a violation of these Terms, fraudulent use, or if required by law.</p>
+            <p>Upon account deletion, your data will be removed in accordance with our Privacy Policy, subject to any applicable legal retention requirements.</p>
+        </section>
+
+        <section class="section" id="s12">
+            <div class="section-number">Section 12</div>
+            <h2>Modifications to the Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. We will notify you of material changes via the app or by email. Your continued use of the Service after notification constitutes acceptance of the modified Terms.</p>
+        </section>
+
+        <section class="section" id="s13">
+            <div class="section-number">Section 13</div>
+            <h2>Governing Law and Jurisdiction</h2>
+            <p>These Terms are governed by the laws of Italy. Any disputes arising from or relating to these Terms shall be subject to the exclusive jurisdiction of the courts of Lugano, without prejudice to mandatory consumer rights under applicable law.</p>
+            <p>For consumers residing in the European Union, the option to use the European Commission's Online Dispute Resolution (ODR) platform remains available at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+        </section>
+
+        <section class="section" id="s14">
+            <div class="section-number">Section 14</div>
+            <h2>Contact Us</h2>
+            <p>For questions, requests, or reports related to these Terms of Service, you may contact us:</p>
+            <div class="highlight-box">
+                <p><strong>NVP Tech Srls</strong><br>
+                Email: <a href="mailto:support@bibiis.ch">support@bibiis.ch</a><br>
+                Website: <a href="https://www.bibiis.ch">bibiis.ch</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 NVP Tech Srls. All rights reserved. &nbsp;&middot;&nbsp; <a href="https://www.bibiis.ch">bibiis.ch</a></p>
+    </footer>
+
+</body>
+</html>
