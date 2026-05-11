@@ -1,0 +1,30 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/Privacy.html",
+      "destination": "https://bibiis.ch/legal/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/Terms.html",
+      "destination": "https://bibiis.ch/legal/terms",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "https://bibiis.ch/legal/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "https://bibiis.ch/legal/terms",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "destination": "https://bibiis.ch/",
+      "permanent": true
+    }
+  ]
+}
